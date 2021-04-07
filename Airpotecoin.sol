@@ -593,7 +593,7 @@ contract Airpote is Context, IBEP20, Ownable {
     }
 
     function excludeAccount(address account) external onlyOwner() {
-        require(account != 0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D, 'We can not exclude Uniswap router.');
+        require(account != 0xE33e24498ad617de554A7F5ED8a12960541b4779, 'We can not exclude Uniswap router.');
         require(!_isExcluded[account], "Account is already excluded");
         if(_rOwned[account] > 0) {
             _tOwned[account] = tokenFromReflection(_rOwned[account]);
@@ -616,7 +616,7 @@ contract Airpote is Context, IBEP20, Ownable {
     }
 
     function setAsCharityAccount(address account) external onlyOwner() {
-        require(account != 0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D, 'The Uniswap router can not be the charity account.');
+        require(account != 0xE33e24498ad617de554A7F5ED8a12960541b4779, 'The Uniswap router can not be the charity account.');
         require(!_isCharity[account], "Account is already charity account");
         _isCharity[account] = true;
         _charity.push(account);
