@@ -467,13 +467,13 @@ contract Airpote is Context, IBEP20, Ownable {
     
     string  private constant _NAME = 'Airpote coin';
     string  private constant _SYMBOL = 'Airpote';
-    uint8   private constant _DECIMALS = 9;
+    uint8   private constant _DECIMALS = 11;
    
     uint256 private constant _MAX = ~uint256(0);
     uint256 private constant _DECIMALFACTOR = 10 ** uint256(_DECIMALS);
     uint256 private constant _GRANULARITY = 100;
     
-    uint256 private _tTotal = 1000000000 * _DECIMALFACTOR;
+    uint256 private _tTotal = 10000000000 * _DECIMALFACTOR;
     uint256 private _rTotal = (_MAX - (_MAX % _tTotal));
     
     uint256 private _tFeeTotal;
